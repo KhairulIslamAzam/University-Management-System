@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "SaveDepartment";
+    Layout = null;
+    string message = ViewBag.Message;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Save Department</title>
+</head>
+
+<body>
+    <form method="post">
+        <fieldset>
+            <legend>Department Save</legend>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><label for="Code">Code</label></td>
+                        <td><input id="Code" name="Code" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Name">Name</label></td>
+                        <td><input id="Name" name="Name" type="text" /></td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="submit" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+        <label>@message</label>
+    </form>
+</body>
+    
+
+
+</html>
+

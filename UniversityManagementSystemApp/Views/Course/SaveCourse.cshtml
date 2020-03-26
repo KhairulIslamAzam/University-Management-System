@@ -1,0 +1,77 @@
+﻿@using UniversityManagementSystemApp.Models
+@{
+    ViewBag.Title = "SaveCourse";
+    Layout = null;
+    List<Department> departments = ViewBag.Department;
+    List<Semester> semesters = ViewBag.Semester;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Save Course</title>
+</head>
+
+<body>
+    <form method="post">
+        <fieldset>
+            <legend>Course Save</legend>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><label for="CourseCode">Course Code</label></td>
+                        <td><input id="CourseCode" name="CourseCode" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="CourseName">Course Name</label></td>
+                        <td><input id="CourseName" name="CourseName" type="text" /></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="Credit">Credit</label></td>
+                        <td><input id="Credit" name="Credit" type="text" /></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="Description">Description</label></td>
+                        <td><input id="Description" name="Description" type="text" /></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="DeptId">Department</label></td>
+                        <td>
+                            <select id="DeptId" name="DeptId">
+                                @foreach(Department department in departments){ 
+                                <option value="@department.Id">@department.Code</option>
+                                }
+                            </select>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="SemesterId">SemesterId</label></td>
+                        <td>
+                            <select id="SemesterId" name="SemesterId">
+                                @foreach (Semester semester in semesters)
+                                {
+                                    <option value="@semester.SemesterId">@semester.SemesterName</option>
+                                }
+                            </select>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <label>@ViewBag.Message</label>
+        </fieldset>
+    </form>
+</body>
+
+
+
+</html>

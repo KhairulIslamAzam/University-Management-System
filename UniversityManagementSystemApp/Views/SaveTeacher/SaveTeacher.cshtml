@@ -1,0 +1,85 @@
+﻿@using UniversityManagementSystemApp.Models
+@{
+    ViewBag.Title = "SaveTeacher";
+    Layout = null;
+    List<Designation> designationList = ViewBag.Designation;
+    List<Department> departmentList = ViewBag.Department;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Save Course</title>
+</head>
+
+<body>
+    <form method="post">
+        <fieldset>
+            <legend>Save Teacher</legend>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><label for="TeacherName">Name</label></td>
+                        <td><input id="TeacherName" name="TeacherName" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Address">Address</label></td>
+                        <td><input id="Address" name="Address" type="text" /></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="Email">Email</label></td>
+                        <td><input id="Email" name="Email" type="email" /></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="Contact">Contact</label></td>
+                        <td><input id="Contact" name="Contact" type="text" /></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="DeptId">Department</label></td>
+                        <td>
+                            <select id="DeptId" name="DeptId">
+                                @foreach (Department department in departmentList)
+                                {
+                                    <option value="@department.Id">@department.Code</option>
+                                }
+                            </select>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="DesignationId">Designation</label></td>
+                        <td>
+                            <select id="DesignationId" name="DesignationId">
+                                @foreach (Designation designation in designationList)
+                                {
+                                    <option value="@designation.DesignationId">@designation.Name</option>
+                                }
+                            </select>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Credit">Credit</label></td>
+                        <td><input id="Credit" name="Credit" type="text" /></td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="submit" /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <label>@ViewBag.Message</label>
+        </fieldset>
+    </form>
+</body>
+
+
+
+</html>
+
+

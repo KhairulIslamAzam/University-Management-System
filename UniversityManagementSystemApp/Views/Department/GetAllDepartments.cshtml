@@ -1,0 +1,40 @@
+﻿@using UniversityManagementSystemApp.Models
+@model IEnumerable<UniversityManagementSystemApp.Models.Department>
+@{
+    ViewBag.Title = "GetAllDepartments";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Save Department</title>
+</head>
+
+<body>
+    <fieldset>
+            <legend>All Departments</legend>
+            <table>
+                <thead>
+                    <tr>
+                        <td><label for="Code">Code</label></td>
+                        <td><label for="Name">Name</label></td>
+                    </tr>
+                </thead>
+                <tbody>
+                   @foreach(Department department in Model)
+                   {
+                       <tr>
+                           <td>@department.Code</td>
+                           <td>@department.Name</td>
+                       </tr>
+                   }
+                </tbody>
+            </table>
+    </fieldset>
+</body>
+
+
+
+</html>
